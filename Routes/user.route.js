@@ -6,6 +6,14 @@ const { UserModel } = require("../Model/UserModel");
 const users = express.Router()
 
 
+users.get("/",async(req,res)=>{
+    try {
+        res.send("User Route")
+    } catch (error) {
+        console.log("error",error)
+        res.send({"error":error.message})
+    }
+})
 users.get("/single/:email",async(req,res)=>{
     let email = req.params.email
     try {
