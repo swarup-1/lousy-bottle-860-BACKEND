@@ -16,12 +16,12 @@ app.get("/",(req,res)=>{
     res.send("Welcome to Backend")
 })
 
-app.listen(process.env.port, async()=>{
+app.listen(8080, async()=>{
     try{
         await connect
         console.log("Connected to DB")
     }catch(err){
         console.log('err:', err)
     }
-    console.log(`Server is running at PORT ${process.env.port}`)
+    console.log(`Server is running at PORT 8080`)
 })
